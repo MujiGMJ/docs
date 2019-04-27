@@ -13,6 +13,7 @@
 <url> <loc>https://docs.erxes.io/docs/administration/integrations</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/administration/integrations" /> </url>
 <url> <loc>https://docs.erxes.io/docs/administration/migration</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/administration/migration" /> </url>
 <url> <loc>https://docs.erxes.io/docs/administration/permissions</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/administration/permissions" /> </url>
+<url> <loc>https://docs.erxes.io/docs/android-sdk</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/android-sdk" /> </url>
 <url> <loc>https://docs.erxes.io/docs/architecture-overview</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/architecture-overview" /> </url>
 <url> <loc>https://docs.erxes.io/docs/cco</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/cco" /> </url>
 <url> <loc>https://docs.erxes.io/docs/cdi</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/cdi" /> </url>
@@ -26,10 +27,14 @@
 <url> <loc>https://docs.erxes.io/docs/installation/docker</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/installation/docker" /> </url>
 <url> <loc>https://docs.erxes.io/docs/installation/ubuntu</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/installation/ubuntu" /> </url>
 <url> <loc>https://docs.erxes.io/docs/integrations-overview</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/integrations-overview" /> </url>
+<url> <loc>https://docs.erxes.io/docs/ios-sdk</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/ios-sdk" /> </url>
+<url> <loc>https://docs.erxes.io/docs/knowledge-base</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/knowledge-base" /> </url>
 <url> <loc>https://docs.erxes.io/docs/leads/leads</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/leads/leads" /> </url>
+<url> <loc>https://docs.erxes.io/docs/mobile-apps</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/mobile-apps" /> </url>
 <url> <loc>https://docs.erxes.io/docs/overview</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/overview" /> </url>
 <url> <loc>https://docs.erxes.io/docs/security-overview</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/security-overview" /> </url>
 <url> <loc>https://docs.erxes.io/docs/signing-in</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/signing-in" /> </url>
 <url> <loc>https://docs.erxes.io/docs/support-guide</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/support-guide" /> </url>
+<url> <loc>https://docs.erxes.io/docs/team-inbox</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/team-inbox" /> </url>
 <url> <loc>https://docs.erxes.io/docs/users-guide</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/users-guide" /> </url>
 </urlset>
