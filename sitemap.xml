@@ -12,13 +12,16 @@
 <url> <loc>https://docs.erxes.io/docs/cdi</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/cdi" /> </url>
 <url> <loc>https://docs.erxes.io/docs/deployment-overview</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/deployment-overview" /> </url>
 <url> <loc>https://docs.erxes.io/docs/engage</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/engage" /> </url>
+<url> <loc>https://docs.erxes.io/docs/engage/engage</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/engage/engage" /> </url>
 <url> <loc>https://docs.erxes.io/docs/doc2</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/doc2" /> </url>
 <url> <loc>https://docs.erxes.io/docs/doc4</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/doc4" /> </url>
 <url> <loc>https://docs.erxes.io/docs/faq</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/faq" /> </url>
 <url> <loc>https://docs.erxes.io/docs/getting-started</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/getting-started" /> </url>
 <url> <loc>https://docs.erxes.io/docs/integrations-overview</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/integrations-overview" /> </url>
+<url> <loc>https://docs.erxes.io/docs/leads/leads</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/leads/leads" /> </url>
 <url> <loc>https://docs.erxes.io/docs/overview</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/overview" /> </url>
 <url> <loc>https://docs.erxes.io/docs/product-overview</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/product-overview" /> </url>
 <url> <loc>https://docs.erxes.io/docs/security-overview</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/security-overview" /> </url>
+<url> <loc>https://docs.erxes.io/docs/support-guide</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/support-guide" /> </url>
 <url> <loc>https://docs.erxes.io/docs/users-guide</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/users-guide" /> </url>
 </urlset>
