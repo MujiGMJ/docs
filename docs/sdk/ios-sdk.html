@@ -54,32 +54,131 @@
 <li>Minimum deployment target : iOS 9.0</li>
 <li>Swift 4 compatible</li>
 <li>Objective-C compatible</li>
+<li>brandCode - uniquely generated code for your brand which you can find in your messenger installation code</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="installation-with-swift"></a><a href="#installation-with-swift" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installation with Swift</h2>
-<ol>
-<li>Add 'ErxesSdk' to your podfile and run pod install</li>
-</ol>
-<pre><code class="hljs">target <span class="hljs-comment">'<span class="hljs-doctag">&lt;Your Target Name&gt;</span>' do</span>
-    pod <span class="hljs-comment">'ErxesSDK'</span>
-<span class="hljs-keyword">end</span>
+<p>Following configuration should be made in your AppDelegate.swift basic properties.</p>
+<pre><code class="hljs"><span class="hljs-keyword">import</span> ErxesSDK
 </code></pre>
-<ol start="2">
-<li>In your AppDelegate config basic properties of ErxesSDK</li>
-</ol>
-<ul>
-<li>brandCode - generated unique code of your brand</li>
-<li>apiHost - erxes-widgets-api server url</li>
-<li>subsHost - erxes-api subscription url</li>
-<li>uploadUrl - erxes-api server url</li>
-</ul>
-<pre><code class="hljs css language-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">application</span><span class="hljs-params">(<span class="hljs-number">_</span> application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: <span class="hljs-keyword">Any</span>]?)</span></span> -&gt; <span class="hljs-type">Bool</span> {
-    <span class="hljs-type">Erxes</span>.setBrandCode(code: <span class="hljs-string">"YDEdKj"</span>)
-    <span class="hljs-type">Erxes</span>.setHosts(apiHost: <span class="hljs-string">"http://localhost:3100/graphql"</span>,
-            subsHost: <span class="hljs-string">"ws://localhost:3300/subscriptions"</span>,
-            uploadUrl: <span class="hljs-string">"http://localhost:3300/upload-file"</span>)
-    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+<h5><a class="anchor" aria-hidden="true" id="for-open-source-version"></a><a href="#for-open-source-version" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>For Open Source Version:</h5>
+<pre><code class="hljs"><span class="hljs-selector-tag">func</span> <span class="hljs-selector-tag">application</span>(_ <span class="hljs-attribute">application</span>: UIApplication, didFinishLaunchingWithOptions <span class="hljs-attribute">launchOptions</span>: [<span class="hljs-attribute">UIApplicationLaunchOptionsKey</span>: Any]?) <span class="hljs-selector-tag">-</span>&gt; <span class="hljs-selector-tag">Bool</span> {
+<span class="hljs-selector-tag">Erxes</span><span class="hljs-selector-class">.setBrandCode</span>(<span class="hljs-attribute">code</span>: “brandCode”)
+    <span class="hljs-selector-tag">Erxes</span><span class="hljs-selector-class">.setHosts</span>(<span class="hljs-attribute">apiHost</span>: “<span class="hljs-attribute">https</span>:<span class="hljs-comment">//erxes-widgets-api/graphql”,</span>
+            <span class="hljs-attribute">subsHost</span>: <span class="hljs-string">"wss://erxes-api/subscriptions"</span>,
+            <span class="hljs-attribute">uploadUrl</span>: <span class="hljs-string">"https://erxes-api/upload-file"</span>)
+ <span class="hljs-selector-tag">return</span> <span class="hljs-selector-tag">true</span>
+}
+
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="for-saas-version"></a><a href="#for-saas-version" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>For SaaS Version:</h5>
+<pre><code class="hljs"><span class="hljs-selector-tag">func</span> <span class="hljs-selector-tag">application</span>(_ <span class="hljs-attribute">application</span>: UIApplication, didFinishLaunchingWithOptions <span class="hljs-attribute">launchOptions</span>: [<span class="hljs-attribute">UIApplicationLaunchOptionsKey</span>: Any]?) <span class="hljs-selector-tag">-</span>&gt; <span class="hljs-selector-tag">Bool</span> {
+<span class="hljs-selector-tag">Erxes</span><span class="hljs-selector-class">.setBrandCode</span>(<span class="hljs-attribute">code</span>: “brandCode”)
+<span class="hljs-selector-tag">Erxes</span><span class="hljs-selector-class">.setHosts</span>(<span class="hljs-attribute">apiHost</span>: “<span class="hljs-attribute">https</span>:<span class="hljs-comment">//YourCompanyName.app.erxes.io/widgets-api/graphql”,</span>
+            <span class="hljs-attribute">subsHost</span>: <span class="hljs-string">"wss://YourCompanyName.app.erxes.io/api/subscriptions"</span>,
+            <span class="hljs-attribute">uploadUrl</span>: <span class="hljs-string">"https://YourCompanyName.app.erxes.io/api/upload-file"</span>)
+ <span class="hljs-selector-tag">return</span> <span class="hljs-selector-tag">true</span>
+}
+
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="next"></a><a href="#next" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NEXT</h4>
+<h5><a class="anchor" aria-hidden="true" id="to-start-erxes-sdk-in-your-app"></a><a href="#to-start-erxes-sdk-in-your-app" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>To start erxes SDK in your app:</h5>
+<pre><code class="hljs"><span class="hljs-keyword">import</span> ErxesSDK
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="this-function-will-start-erxes-sdk-with-authentication-options"></a><a href="#this-function-will-start-erxes-sdk-with-authentication-options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>This function will start erxes SDK with authentication options:</h5>
+<pre><code class="hljs"><span class="hljs-symbol">@ibaction</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">buttonAction</span><span class="hljs-params">(sender:Uibutton)</span>{</span>
+    Erxes.start()
 }
 </code></pre>
+<h5><a class="anchor" aria-hidden="true" id="if-your-application-has-already-registered-users-following-function-will-authenticate-them-automaticallyin-app-messaging"></a><a href="#if-your-application-has-already-registered-users-following-function-will-authenticate-them-automaticallyin-app-messaging" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>If your application has already registered users following function will authenticate them automatically(in-app messaging):</h5>
+<h5><a class="anchor" aria-hidden="true" id="by-email-address"></a><a href="#by-email-address" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>By email address:</h5>
+<pre><code class="hljs"><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Erxes</span>.</span></span>start<span class="hljs-constructor">WithUserEmail(<span class="hljs-params">email</span>: <span class="hljs-string">"email of user"</span>)</span>
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="by-phone-number"></a><a href="#by-phone-number" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>By phone number:</h5>
+<pre><code class="hljs"><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Erxes</span>.</span></span>start<span class="hljs-constructor">WithUserPhone(<span class="hljs-params">phone</span>: <span class="hljs-string">"phone number of user"</span>)</span>
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="if-you-intend-to-fetch-some-specific-datas-from-users-include-following-function"></a><a href="#if-you-intend-to-fetch-some-specific-datas-from-users-include-following-function" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>If you intend to fetch some specific datas from users include following function:</h5>
+<pre><code class="hljs">var messengerData = [<span class="hljs-string">String:Any</span>](<span class="hljs-link"></span>)
+messengerData["user data key"] = "user data value"
+Erxes.start(email: "", phone: "", data: messengerData)
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="to-end-current-user-session"></a><a href="#to-end-current-user-session" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>To end current user session:</h5>
+<pre><code class="hljs"> <span class="hljs-selector-tag">Erxes</span><span class="hljs-selector-class">.endSession</span>(<span class="hljs-attribute">completionHandler</span>: {
+            <span class="hljs-comment">// do your stuff</span>
+        })
+
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="or-simply"></a><a href="#or-simply" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Or simply</h5>
+<pre><code class="hljs"><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Erxes</span>.</span></span><span class="hljs-keyword">end</span><span class="hljs-constructor">Session()</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="installation-with-objective-c"></a><a href="#installation-with-objective-c" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installation with Objective-C</h2>
+<p>Following configuration should be made in your AppDelegate.m basic properties.</p>
+<pre><code class="hljs"><span class="hljs-meta">#import <span class="hljs-meta-string">&lt;ErxesSDK/ErxesSDK-Swift.h&gt;</span></span>
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="for-open-source-version-1"></a><a href="#for-open-source-version-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>For Open Source Version:</h5>
+<pre><code class="hljs">- (BOOL)<span class="hljs-string">application:</span>(UIApplication *)application <span class="hljs-string">didFinishLaunchingWithOptions:</span>(NSDictionary *)launchOptions {
+    <span class="hljs-comment">// Override point for customization after application launch.</span>
+    [Erxes <span class="hljs-string">setBrandCodeWithCode:</span>@<span class="hljs-string">"brandCode"</span>];
+    [Erxes <span class="hljs-string">setHostsWithApiHost:</span>@<span class="hljs-string">"https://erxes-widgets-api/graphql/graphql"</span> <span class="hljs-string">subsHost:</span>@<span class="hljs-string">"wss://erxes-api/subscriptions"</span> 
+<span class="hljs-string">uploadUrl:</span>@<span class="hljs-string">"https://erxes-api/upload-file"</span>];
+    <span class="hljs-keyword">return</span> YES;
+}
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="for-saas-version-1"></a><a href="#for-saas-version-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>For SaaS Version:</h5>
+<pre><code class="hljs">- (BOOL)<span class="hljs-string">application:</span>(UIApplication *)application <span class="hljs-string">didFinishLaunchingWithOptions:</span>(NSDictionary *)launchOptions {
+    <span class="hljs-comment">// Override point for customization after application launch.</span>
+    [Erxes <span class="hljs-string">setBrandCodeWithCode:</span>@<span class="hljs-string">"brandCode"</span>];
+    [Erxes <span class="hljs-string">setHostsWithApiHost:</span>@<span class="hljs-string">"https://YourCompanyName.app.erxes.io/widgets-api/graphql"</span> <span class="hljs-string">subsHost:</span>@<span class="hljs-string">"wss://YourCompanyName.app.erxes.io/api/subscriptions"</span> <span class="hljs-string">uploadUrl:</span>@<span class="hljs-string">"https://YourCompanyName.app.erxes.io/api/upload-file"</span>];
+    <span class="hljs-keyword">return</span> YES;
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="next-1"></a><a href="#next-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NEXT</h4>
+<h5><a class="anchor" aria-hidden="true" id="to-start-erxes-sdk-in-your-app-1"></a><a href="#to-start-erxes-sdk-in-your-app-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>To start erxes SDK in your app:</h5>
+<pre><code class="hljs"><span class="hljs-meta">#import <span class="hljs-meta-string">&lt;ErxesSDK/ErxesSDK-Swift.h&gt;</span></span>
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="this-function-will-start-erxes-sdk-with-authentication-options-1"></a><a href="#this-function-will-start-erxes-sdk-with-authentication-options-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>This function will start erxes SDK with authentication options:</h5>
+<pre><code class="hljs"><span class="hljs-selector-tag">-</span> (IBAction)<span class="hljs-selector-tag">buttonAction</span><span class="hljs-selector-pseudo">:(id)sender</span> {
+    <span class="hljs-selector-attr">[Erxes start]</span>;
+}
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="if-your-application-has-already-registered-users-following-function-will-authenticate-them-automaticallyin-app-messaging-1"></a><a href="#if-your-application-has-already-registered-users-following-function-will-authenticate-them-automaticallyin-app-messaging-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>If your application has already registered users following function will authenticate them automatically(in-app messaging):</h5>
+<h5><a class="anchor" aria-hidden="true" id="by-email-address-1"></a><a href="#by-email-address-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>By email address:</h5>
+<pre><code class="hljs">[<span class="hljs-name">Erxes</span> startWithUserEmailWithEmail:@<span class="hljs-string">"email of user"</span>]<span class="hljs-comment">;</span>
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="by-phone-number-1"></a><a href="#by-phone-number-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>By phone number:</h5>
+<pre><code class="hljs">[<span class="hljs-name">Erxes</span> startWithUserPhoneWithPhone:@<span class="hljs-string">"phone of user"</span>]<span class="hljs-comment">;</span>
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="if-you-intend-to-fetch-some-specific-datas-from-users-include-following-function-1"></a><a href="#if-you-intend-to-fetch-some-specific-datas-from-users-include-following-function-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>If you intend to fetch some specific datas from users include following function:</h5>
+<pre><code class="hljs">NSMutableDictionary *messengerData = [[NSMutableDictionary alloc] init];
+[messengerData <span class="hljs-string">setObject:</span>@<span class="hljs-string">"what ever you want"</span> <span class="hljs-string">forKey:</span>@<span class="hljs-string">"user data"</span>];
+[Erxes <span class="hljs-string">startWithEmail:</span>@<span class="hljs-string">""</span> <span class="hljs-string">phone:</span>@<span class="hljs-string">""</span> <span class="hljs-string">data:</span>messengerData];
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="to-end-current-user-session-1"></a><a href="#to-end-current-user-session-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>To end current user session:</h5>
+<pre><code class="hljs">[Erxes <span class="hljs-string">endSessionWithCompletionHandler:</span>^{
+        <span class="hljs-comment">// do your stuff</span>
+}];
+</code></pre>
+<!-- 
+## Installation with Swift
+1. Add 'ErxesSdk' to your podfile and run pod install
+```
+target '<Your Target Name>' do
+    pod 'ErxesSDK'
+end
+```
+2. In your AppDelegate config basic properties of ErxesSDK
++ brandCode - generated unique code of your brand
++ apiHost - erxes-widgets-api server url
++ subsHost - erxes-api subscription url
++ uploadUrl - erxes-api server url
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    Erxes.setBrandCode(code: "YDEdKj")
+    Erxes.setHosts(apiHost: "http://localhost:3100/graphql",
+            subsHost: "ws://localhost:3300/subscriptions",
+            uploadUrl: "http://localhost:3300/upload-file")
+    return true
+}
+```
 <h3><a class="anchor" aria-hidden="true" id="start-erxes-sdk"></a><a href="#start-erxes-sdk" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Start Erxes Sdk</h3>
 <p>Just call this function inside your own trigger function</p>
 <pre><code class="hljs"><span class="hljs-symbol">@IBAction</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">btnClick</span><span class="hljs-params">()</span>{</span>
@@ -94,7 +193,7 @@
     Erxes.start(email: <span class="hljs-string">"purevyondon.a@nmma.co"</span>, phone: <span class="hljs-string">"88998899"</span>, <span class="hljs-keyword">data</span>: <span class="hljs-keyword">data</span>)
 }
 </code></pre>
-<h2><a class="anchor" aria-hidden="true" id="installation-with-objective-c"></a><a href="#installation-with-objective-c" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installation With Objective-C</h2>
+<h2><a class="anchor" aria-hidden="true" id="installation-with-objective-c-1"></a><a href="#installation-with-objective-c-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installation With Objective-C</h2>
 <p>Config basic properties of ErxesSDK in your AppDelegate</p>
 <ul>
 <li>brandCode - generated unique code of your brand</li>
@@ -117,11 +216,11 @@
 }
 </code></pre>
 <p>If your application has already registered user provide info with this function</p>
-<pre><code class="hljs">- (IBAction)<span class="hljs-string">btnClick:</span>(id)sender {
-    [Erxes <span class="hljs-string">startWithUserEmailWithEmail:</span>@<span class="hljs-string">"test@test.com"</span>];
+<pre><code class="hljs">- (IBAction)btnClick:(<span class="hljs-built_in">id</span>)sender {
+    [Erxes startWithUserEmailWithEmail:@<span class="hljs-string">"test@test.com"</span>];
 }
-</code></pre>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/sdk/android-sdk"><span class="arrow-prev">← </span><span>Android SDK</span></a><a class="docs-next button" href="/docs/coding-standarts"><span>Coding standarts</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#requirement">Requirement</a></li><li><a href="#installation-with-swift">Installation with Swift</a><ul class="toc-headings"><li><a href="#start-erxes-sdk">Start Erxes Sdk</a></li></ul></li><li><a href="#installation-with-objective-c">Installation With Objective-C</a><ul class="toc-headings"><li><a href="#start-erxes-sdk-1">Start Erxes Sdk</a></li></ul></li></ul></nav></div><footer class="footer"><hr/><p> © Copyright 2019 <a class="footerLink" href="https://erxes.io" target="_blank">Erxes Inc</a> </p></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+``` <span class="hljs-comment">--&gt;</span></code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/sdk/android-sdk"><span class="arrow-prev">← </span><span>Android SDK</span></a><a class="docs-next button" href="/docs/coding-standarts"><span>Coding standarts</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#requirement">Requirement</a></li><li><a href="#installation-with-swift">Installation with Swift</a></li><li><a href="#installation-with-objective-c">Installation with Objective-C</a></li><li><a href="#installation-with-swift-1">Installation with Swift</a><ul class="toc-headings"><li><a href="#start-erxes-sdk">Start Erxes Sdk</a></li></ul></li><li><a href="#installation-with-objective-c-1">Installation With Objective-C</a><ul class="toc-headings"><li><a href="#start-erxes-sdk-1">Start Erxes Sdk</a></li></ul></li></ul></nav></div><footer class="footer"><hr/><p> © Copyright 2019 <a class="footerLink" href="https://erxes.io" target="_blank">Erxes Inc</a> </p></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
