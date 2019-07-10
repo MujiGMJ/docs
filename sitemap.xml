@@ -7,9 +7,9 @@
 <url> <loc>https://docs.erxes.io/blog/2017/09/25/testing-rss</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://docs.erxes.io/blog/2017/04/10/blog-post-two</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://docs.erxes.io/blog/2016/03/11/blog-post</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
+<url> <loc>https://docs.erxes.io/docs/administrator/creating-first-user</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/administrator/creating-first-user" /> </url>
 <url> <loc>https://docs.erxes.io/docs/administrator/environment-variables</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/administrator/environment-variables" /> </url>
 <url> <loc>https://docs.erxes.io/docs/administrator/file-upload</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/administrator/file-upload" /> </url>
-<url> <loc>https://docs.erxes.io/docs/administrator/initial-data</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/administrator/initial-data" /> </url>
 <url> <loc>https://docs.erxes.io/docs/administrator/integrations</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/administrator/integrations" /> </url>
 <url> <loc>https://docs.erxes.io/docs/administrator/migration</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/administrator/migration" /> </url>
 <url> <loc>https://docs.erxes.io/docs/developer/android-sdk</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://docs.erxes.io/docs/developer/android-sdk" /> </url>
