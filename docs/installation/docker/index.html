@@ -207,10 +207,10 @@ docker-compose version 1.24.0, build 1110ad01
       <span class="hljs-comment"># public urls</span>
 <span class="hljs-attr">      DOMAIN:</span> <span class="hljs-attr">http://localhost:3300</span>
 <span class="hljs-attr">      MAIN_APP_DOMAIN:</span> <span class="hljs-attr">http://localhost:3000</span>
+<span class="hljs-attr">      WIDGETS_DOMAIN:</span> <span class="hljs-attr">http://localhost:3200</span>
+<span class="hljs-attr">      INTEGRATIONS_API_DOMAIN:</span> <span class="hljs-attr">http://localhost:3400</span>
       <span class="hljs-comment"># non public urls</span>
-<span class="hljs-attr">      WIDGETS_DOMAIN:</span> <span class="hljs-attr">http://erxes-widgets:3200</span>
 <span class="hljs-attr">      WIDGETS_API_DOMAIN:</span> <span class="hljs-attr">http://erxes-widgets-api:3100</span>
-<span class="hljs-attr">      INTEGRATIONS_API_DOMAIN:</span> <span class="hljs-attr">http://erxes-integrations:3400</span>
 <span class="hljs-attr">      CRONS_API_DOMAIN:</span> <span class="hljs-attr">http://erxes-crons:3600</span>
 <span class="hljs-attr">      WORKERS_API_DOMAIN:</span> <span class="hljs-attr">http://erxes-workers:3700</span>
 <span class="hljs-attr">      LOGS_API_DOMAIN:</span> <span class="hljs-attr">http://erxes-logger:3800</span>
@@ -338,9 +338,9 @@ docker-compose version 1.24.0, build 1110ad01
 <span class="hljs-attr">      DEBUG:</span> <span class="hljs-string">"erxes-integrations:*"</span>
       <span class="hljs-comment"># public urls</span>
 <span class="hljs-attr">      DOMAIN:</span> <span class="hljs-attr">http://localhost:3400</span>
+<span class="hljs-attr">      MAIN_APP_DOMAIN:</span> <span class="hljs-attr">http://localhost:3000</span>
+<span class="hljs-attr">      MAIN_API_DOMAIN:</span> <span class="hljs-attr">http://localhost:3300</span>
       <span class="hljs-comment"># non public urls</span>
-<span class="hljs-attr">      MAIN_APP_DOMAIN:</span> <span class="hljs-attr">http://erxes:80</span>
-<span class="hljs-attr">      MAIN_API_DOMAIN:</span> <span class="hljs-attr">http://erxes-api:3300</span>
       <span class="hljs-comment"># MongoDB</span>
 <span class="hljs-attr">      MONGO_URL:</span> <span class="hljs-attr">mongodb://mongo/erxes_integrations</span>
 <span class="hljs-attr">    ports:</span>
@@ -407,7 +407,7 @@ docker-compose version 1.24.0, build 1110ad01
 <span class="hljs-attr">    driver:</span> <span class="hljs-string">bridge</span>
 </code></pre>
 <p>If you have trouble running erxes docker images, feel free to open <a href="https://github.com/erxes/erxes/issues">issue</a>.</p>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 7/16/2019 by shinebayar-g</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/overview/integrations-overview"><span class="arrow-prev">← </span><span>Integrations Overview</span></a><a class="docs-next button" href="/docs/installation/kubernetes"><span>Kubernetes</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prerequisites">Prerequisites</a><ul class="toc-headings"><li><a href="#install-docker">Install docker</a></li><li><a href="#install-docker-compose">Install docker compose</a></li></ul></li><li><a href="#install-erxes">Install erxes</a><ul class="toc-headings"><li><a href="#default-ports">Default ports</a></li><li><a href="#docker-composeyml-file">docker-compose.yml file</a></li></ul></li></ul></nav></div><footer class="footer"><hr/><p> © Copyright 2019 <a class="footerLink" href="https://erxes.io" target="_blank">erxes Inc</a> </p></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 8/5/2019 by shinebayar-g</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/overview/integrations-overview"><span class="arrow-prev">← </span><span>Integrations Overview</span></a><a class="docs-next button" href="/docs/installation/kubernetes"><span>Kubernetes</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prerequisites">Prerequisites</a><ul class="toc-headings"><li><a href="#install-docker">Install docker</a></li><li><a href="#install-docker-compose">Install docker compose</a></li></ul></li><li><a href="#install-erxes">Install erxes</a><ul class="toc-headings"><li><a href="#default-ports">Default ports</a></li><li><a href="#docker-composeyml-file">docker-compose.yml file</a></li></ul></li></ul></nav></div><footer class="footer"><hr/><p> © Copyright 2019 <a class="footerLink" href="https://erxes.io" target="_blank">erxes Inc</a> </p></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
